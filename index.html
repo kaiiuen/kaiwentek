@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KaiwenTek | PC Part Picker Style</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">Kaiwen<span>Tek</span></div>
+    <nav class="nav">
+      <a href="#catalog">Filters</a>
+      <a href="#results">Computers</a>
+      <a class="pill" href="#">Sign In</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">PCPartPicker inspired layout</p>
+        <h1>Filter and pick ready-to-run computers</h1>
+        <p class="lede">Search like the classic part picker: side filters for CPU, GPU, RAM, SSD, Wi‑Fi, NPU and live sliders for clocks, VRAM, and capacity.</p>
+        <div class="hero__actions">
+          <a class="cta" href="#catalog">Open filters</a>
+          <a class="ghost" href="#results">View matches</a>
+        </div>
+      </div>
+      <div class="hero__card">
+        <div class="badge">Quick glance</div>
+        <div class="hero__total">
+          <p>Matching systems</p>
+          <strong id="match-count">0</strong>
+          <small id="price-range">—</small>
+        </div>
+        <div class="hero__chips" id="active-chips"></div>
+      </div>
+    </section>
+
+    <section id="catalog" class="panel catalog">
+      <aside class="filters">
+        <div class="filters__section">
+          <p class="eyebrow">Search</p>
+          <input id="search" type="search" placeholder="Search model or brand" />
+        </div>
+
+        <div class="filters__section">
+          <p class="eyebrow">Component filters</p>
+          <label>
+            <span>CPU</span>
+            <select id="cpu-filter"></select>
+          </label>
+          <label>
+            <span>GPU</span>
+            <select id="gpu-filter"></select>
+          </label>
+          <label class="toggle">
+            <input type="checkbox" id="wifi-filter" />
+            <span>Wi‑Fi included</span>
+          </label>
+          <label class="toggle">
+            <input type="checkbox" id="npu-filter" />
+            <span>NPU onboard</span>
+          </label>
+        </div>
+
+        <div class="filters__section sliders">
+          <p class="eyebrow">Slider filters</p>
+          <label>
+            <span>RAM size (GB min): <strong id="ram-value"></strong></span>
+            <input type="range" id="ram-range" />
+          </label>
+          <label>
+            <span>SSD size (GB min): <strong id="ssd-value"></strong></span>
+            <input type="range" id="ssd-range" />
+          </label>
+          <label>
+            <span>CPU speed (GHz min): <strong id="cpu-speed-value"></strong></span>
+            <input type="range" id="cpu-speed-range" step="0.1" />
+          </label>
+          <label>
+            <span>GPU VRAM (GB min): <strong id="vram-value"></strong></span>
+            <input type="range" id="vram-range" />
+          </label>
+          <label>
+            <span>Cores (min): <strong id="core-value"></strong></span>
+            <input type="range" id="core-range" />
+          </label>
+          <label>
+            <span>Boost clock (GHz min): <strong id="clock-value"></strong></span>
+            <input type="range" id="clock-range" step="0.1" />
+          </label>
+        </div>
+      </aside>
+
+      <section class="results" id="results">
+        <div class="panel__header">
+          <div>
+            <p class="eyebrow">Item list</p>
+            <h2>Computers matching filters</h2>
+          </div>
+          <button class="ghost" type="button" id="reset-filters">Reset filters</button>
+        </div>
+        <div class="cards" id="result-cards"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made by KaiwenTek · Inspired by PCPartPicker</p>
+    <div class="footer__links">
+      <a href="#">Contact</a>
+      <a href="#">Support</a>
+      <a href="#">Privacy</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
